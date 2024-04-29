@@ -1,4 +1,13 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import axios from 'axios';
 
-createApp(App).mount('#app')
+import App from './App.vue'
+import router from './router'
+import store from './store';
+
+import './index.css'
+
+createApp(App).use(router).use(store).mount('#app')
+
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'http://localhost:5000/';  // the FastAPI backend
